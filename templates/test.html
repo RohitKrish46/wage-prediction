@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEF - Urbanismo + Arquitetura</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #2342a2;
+            color: #000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #FFD700;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .urbanismo-text {
+            font-size: 0.9rem;
+        }
+
+        .menu-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #000;
+            border-radius: 50%;
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            padding: 2rem;
+        }
+
+        .main-content {
+            display: flex;
+            width: 100%;
+        }
+
+        .logo-large {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navigation {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #000;
+            margin: 0.5rem 0;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        h1.big-title {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: #FFD700;
+            text-align: center;
+        }
+        .tagline {
+            font-size: 1.8rem;
+            color: #D3D3D3;
+            margin-bottom: 2rem;
+        }
+        .cta-buttons {
+            /* align-items: center;
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem; */
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            margin-top: 4rem;
+            
+        }
+        .button {
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .primary-button {
+            text-align: center;
+            background: #1a1a1a;
+            color: white;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">FutWallet</a>
+        <!-- <div class="header-right">
+            <span class="urbanismo-text">URBANISMO + ARQUITETURA</span>
+            <div class="menu-button">
+                <div class="dot"></div>
+                <span>CLOSE MENU</span>
+            </div>
+        </div> -->
+        <div class="nav-links">
+            <a href="#Wage Prediction">Wage Prediction</a>
+            <a href="#about">About us</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <div class="logo-large">
+                <div class="logo-large">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300">
+                        <path d="M50 50 
+                                 h150
+                                 a100 100 0 0 1 0 200 
+                                 h-150 
+                                 z" 
+                              fill="black"/>
+                        <circle cx="150" cy="150" r="50" fill="rgb(245, 245, 242)"/>
+                    </svg>
+                </div>
+            </div>
+            <div>
+                <h1 class="big-title">From Skills to Salary <br>Behind the Beautiful Game</h1>
+                <p style="text-align:center"  class="tagline"><b>Estimating Footballers’ Weekly Wages!</b></p>
+                <div class="cta-buttons">
+                    <a href="/predict" class="button primary-button">Predict Wage</a>
+                </div>
+            </div>        
+
+        </div>
+    </main>
+
+    <footer>
+        
+        <div>
+            <a href="https://github.com/RohitKrish46" class="footer-link"><b>GitHub</b></a>
+            <span style="margin: 0 1rem">|</span>
+            <a href="https://en.wikipedia.org/wiki/Vancouver" class="footer-link"> &#127757 <b>Vancouver, Canada</b></a>
+            <span style="margin: 0 1rem">|</span>
+            <a href="https://www.linkedin.com/in/rohit-krishnan-s/" class="footer-link"><b>LinkedIn</b></a>
+        </div>
+    </footer>
+</body>
+</html>
