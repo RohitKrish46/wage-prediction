@@ -14,5 +14,9 @@ with open('./models/preprocessor.pkl', 'rb') as file:
 def home():
     return render_template('test.html')
 
+@app.route('/predict', methods=['GET', 'POST'])
+def predict():
+    return render_template('predict.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
