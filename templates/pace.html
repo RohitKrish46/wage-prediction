@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutWallet - Pace Attributes</title>
+    <style>
+        :root {
+            --primary-blue: rgb(37, 57, 163);
+            --primary-yellow: rgb(255, 213, 0);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--primary-blue);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .logo {
+            color: var(--primary-yellow);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+        }
+
+        .navigation {
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+        }
+
+        .navigation a {
+            color: var(--primary-yellow);
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+
+        h1 {
+            color: var(--primary-yellow);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .attribute-group {
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            color: var(--primary-yellow);
+            margin-bottom: 0.5rem;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 1rem;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            height: 8px;
+            -webkit-appearance: none;
+            background: linear-gradient(to right, var(--primary-yellow) 0%, var(--primary-yellow) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
+            border-radius: 4px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .slider-value {
+            background-color: var(--primary-yellow);
+            color: var(--primary-blue);
+            font-weight: bold;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            min-width: 2rem;
+            text-align: center;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 2rem;
+        }
+
+        button {
+            background-color: var(--primary-yellow);
+            color: var(--primary-blue);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 48%;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .progress-container {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .progress-step {
+            background-color: rgba(255, 255, 255, 0.3);
+            height: 4px;
+            flex: 1;
+            margin: 0 2px;
+        }
+
+        .progress-step.active {
+            background-color: var(--primary-yellow);
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="logo">FutWallet</a>
+    <div class="navigation">
+        <a href="/wage-prediction">Wage Prediction</a>
+        <a href="/stats">Stats</a>
+    </div>
+
+    <h1>Pace Attributes</h1>
+
+    <div class="progress-container">
+        <div class="progress-step active"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+    </div>
+
+    <div class="form-container">
+        <div class="attribute-group">
+            <label for="acceleration">Acceleration</label>
+            <div class="slider-container">
+                <input type="range" id="acceleration" name="acceleration" min="1" max="100" value="50">
+                <span class="slider-value" id="accelerationValue">50</span>
+            </div>
+        </div>
+
+        <div class="attribute-group">
+            <label for="sprintSpeed">Sprint Speed</label>
+            <div class="slider-container">
+                <input type="range" id="sprintSpeed" name="sprintSpeed" min="1" max="100" value="50">
+                <span class="slider-value" id="sprintSpeedValue">50</span>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button id="prevBtn" onclick="window.location.href='player-attributes.html'">Previous</button>
+            <button id="nextBtn" onclick="window.location.href='shooting.html'">Next Step</button>
+        </div>
+    </div>
+
+    <script>
+        // Update slider values in real-time
+        document.querySelectorAll('input[type="range"]').forEach(slider => {
+            const valueDisplay = document.getElementById(slider.id + 'Value');
+            
+            // Initial gradient setup
+            updateSliderBackground(slider);
+            
+            slider.addEventListener('input', () => {
+                valueDisplay.textContent = slider.value;
+                updateSliderBackground(slider);
+            });
+        });
+
+        // Function to update slider background
+        function updateSliderBackground(slider) {
+            const percentage = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            slider.style.background = `linear-gradient(to right, var(--primary-yellow) 0%, var(--primary-yellow) ${percentage}%, rgba(255, 255, 255, 0.3) ${percentage}%, rgba(255, 255, 255, 0.3) 100%)`;
+        }
+    </script>
+</body>
+</html>
